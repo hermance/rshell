@@ -11,5 +11,7 @@ It is the beggining of our *shell project*.
     *ls -a
     *ls -a -l
     *quit
+    *   ls
+    *ls      (with many spaces anywhere)
 3. Features
     *When type 'quit', you exit the program
