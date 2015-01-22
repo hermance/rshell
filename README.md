@@ -7,8 +7,9 @@ It is the beggining of our *shell project*.
     *bug2
     *bug3
 2. Successful tests
-    *test1
-    *test2
-    *test3
+    *ls
+    *ls -a
+    *ls -a -l
+    *quit
 3. Features
     *When type 'quit', you exit the program
