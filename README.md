@@ -10,3 +10,5 @@ It is the beggining of our *shell project*.
     *test1
     *test2
     *test3
+3. Features
+    *When type 'quit', you exit the program
