@@ -75,7 +75,7 @@ for(string::iterator it = input.begin(); it != input.end();++it)
        // cout<<splitedPiece<<endl;
         splitedPiece.clear();//clean the piece to do another one to fill it again
     }
-    if(currentChar==' ' && splitedPiece.size() <= 1&& it != input.end()-1)
+    if((currentChar==' '||currentChar=='\t') && splitedPiece.size() <= 1&& it != input.end()-1)
     {
     	//cout<<"space here that we want removed"<<endl;
         //if there is a lonely space
