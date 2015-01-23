@@ -1,5 +1,7 @@
 CFLAGS = -Wall -Werror -pedantic -ansi
-all:
-	g++ src/main.cpp
-rshell:
-	g++ src/main.cpp
+all:bin
+	g++ -o bin/rshell src/main.cpp
+rshell:bin 
+	g++ -o bin/rshell  src/main.cpp
+bin:
+	mkdir bin
