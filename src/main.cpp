@@ -73,11 +73,11 @@ for(vector<string>::iterator it = arg.begin(); it !=arg.end();++it){
     		//del last space
     	//	splitedArg[splitedArg.size()-1] = CleanString(splitedArg[splitedArg.size()-1],' ');
         splitedArg.erase(splitedArg.end());
-        for(int i=0; i< splitedArg.size();i++){
+       /* for(int i=0; i< splitedArg.size();i++){
             //splitedArg[i] = CleanString(splitedArg[i],' ');
             
             cout<<"splited arg : '"<<splitedArg[i]<<"'"<<endl;
-        }
+        }*/
         
         args.push_back(splitedArg);
     	}
