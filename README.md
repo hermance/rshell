@@ -3,9 +3,7 @@
 It is the beggining of our *shell project*.
 
 1. List Of Bugs
-    *bug1
-    *bug2
-    *bug3
+    *[cmd]#comment
 2. Successful tests
     *ls
     *ls -a
@@ -15,5 +13,7 @@ It is the beggining of our *shell project*.
     *ls      (with many spaces or tabs anywhere)
     *ls;ls;ls;ls
     *ls -a;ls (with spaces and tabs anywhere)
+    *ls #comment
 3. Features
     *When type 'quit', you exit the program
+    *comments are printed 
