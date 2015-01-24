@@ -13,5 +13,7 @@ It is the beggining of our *shell project*.
     *quit
     *   ls (with spaces or tabs)
     *ls      (with many spaces or tabs anywhere)
+    *ls;ls;ls;ls
+    *ls -a;ls (with spaces and tabs anywhere)
 3. Features
     *When type 'quit', you exit the program
