@@ -1,55 +1,86 @@
-Script started on Fri 23 Jan 2015 09:38:24 PM PST
+Script started on Wed 28 Jan 2015 09:09:56 PM PST
 ~
-hdorn001@hammer $ ls
-[0m[01;34mcs100[0m/  [01;34mrshell[0m/  [01;34mucr-cs100[0m/
-[m~
-hdorn001@hammer $ cd rshell[K[K[K[K[K[K[K[K[Kcd rshell
+hdorn001@hammer $ cd rshell
 ~/rshell
 hdorn001@hammer $ make
 g++ -o bin/rshell src/main.cpp
 ~/rshell
 hdorn001@hammer $ bin/rshell
 $ ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
 $ ls -a
-.  ..  a.out  bin  .git  LICENSE  Makefile  README.md  rshell  src  tests
-$  ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-$            ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-$ 					ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-$ 	ls -a
-.  ..  a.out  bin  .git  LICENSE  Makefile  README.md  rshell  src  tests
-$ 	ls	-a
-error in execvp: No such file or directory
-$ ls #test
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-test
-$ 	ls #comment
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-comment
-$ ls; ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
+.  ..  a.out  bin  exec.script	.git  LICENSE  Makefile  README.md  rshell  src  tests
+$ ls -a -a -l -a -a -a -a -a -a -a -a -a -a -a -a 
+total 108
+drwx------  6 hdorn001 csmajs  4096 Jan 28 21:06 .
+drwx------ 13 hdorn001 csmajs  4096 Jan 28 21:03 ..
+-rwx------  1 hdorn001 csmajs 33443 Jan 22 14:33 a.out
+drwx------  2 hdorn001 csmajs  4096 Jan 28 21:07 bin
+-rw-------  1 hdorn001 csmajs     0 Jan 28 21:06 exec.script
+drwx------  8 hdorn001 csmajs  4096 Jan 28 21:01 .git
+-rw-------  1 hdorn001 csmajs   178 Jan 21 19:55 LICENSE
+-rw-------  1 hdorn001 csmajs   140 Jan 23 10:55 Makefile
+-rw-------  1 hdorn001 csmajs   448 Jan 23 21:22 README.md
+-rwx------  1 hdorn001 csmajs 33443 Jan 23 10:52 rshell
+drwx------  2 hdorn001 csmajs  4096 Jan 28 21:03 src
+drwx------  2 hdorn001 csmajs  4096 Jan 28 21:03 tests
 $ ls;ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-$ ls;ls;ls
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
-$ ls;echo test #commentaire
-a.out  bin  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+$ ls;ls;ls;ls;ls;ls;ls;echo test;ls;ls;ls;ls
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
 test
-commentaire
-$ ls#THIS IS A BUG
-THIS IS A BUG
-$ exit
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+$ ls -a;ls-l -a;ls -l;ls
+.  ..  a.out  bin  exec.script	.git  LICENSE  Makefile  README.md  rshell  src  tests
 error in execvp: No such file or directory
-$ quit  
+total 96
+-rwx------ 1 hdorn001 csmajs 33443 Jan 22 14:33 a.out
+drwx------ 2 hdorn001 csmajs  4096 Jan 28 21:07 bin
+-rw------- 1 hdorn001 csmajs     0 Jan 28 21:06 exec.script
+-rw------- 1 hdorn001 csmajs   178 Jan 21 19:55 LICENSE
+-rw------- 1 hdorn001 csmajs   140 Jan 23 10:55 Makefile
+-rw------- 1 hdorn001 csmajs   448 Jan 23 21:22 README.md
+-rwx------ 1 hdorn001 csmajs 33443 Jan 23 10:52 rshell
+drwx------ 2 hdorn001 csmajs  4096 Jan 28 21:03 src
+drwx------ 2 hdorn001 csmajs  4096 Jan 28 21:03 tests
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+$ ls #commenta  ts
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+comments
+$ ls #comment ; tes   ls
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+comment ; ls
+$ #comment
+comment
+$        lls  s
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+$    ls       #many spl aces
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+many spaces
+$ 			ls			#many tabs
+many tabs
+$ exit
 ~/rshell
-hdorn001@hammer $ exit
+hdorn001@hammer $ bin/rshell
+$ ls exit
+ls: cannot access exit: No such file or directory
+$ ls; exit
+a.out  bin  exec.script  LICENSE  Makefile  README.md  rshell  src  tests
+~/rshell
+hdorn001@hammer $ bin/rshell
+$ exit -a
+~/rshell
+hdorn001@hammer $ exit ; ls
 exit
 
-Script done on Fri 23 Jan 2015 09:42:15 PM PST
+Script done on Wed 28 Jan 2015 09:15:00 PM PST
