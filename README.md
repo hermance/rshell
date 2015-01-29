@@ -14,6 +14,13 @@ It is the beggining of our *shell project*.
     *ls;ls;ls;ls
     *ls -a;ls (with spaces and tabs anywhere)
     *ls #comment
+    *#comment
+    *ls -a -a -a -a -a -a -a -a -a -a -a -a -l -l -l -l -a -a -a -a
+    *exit
+    *ls exit
+    *ls;exit
+    *exit -a
+
 3. Features
-    *When type 'quit', you exit the program
+    *When type 'exit', you exit the program
     *comments are printed 
