@@ -80,6 +80,7 @@ for(vector<string>::iterator it = arg.begin(); it !=arg.end();++it){
     	{
     		//del last space
     	//	splitedArg[splitedArg.size()-1] = CleanString(splitedArg[splitedArg.size()-1],' ');
+        //args.push_back(splitedArg);
         splitedArg.erase(splitedArg.end());
        /** for(int i=0; i< splitedArg.size();i++){
             //splitedArg[i] = CleanString(splitedArg[i],' ');
@@ -89,6 +90,7 @@ for(vector<string>::iterator it = arg.begin(); it !=arg.end();++it){
         
         args.push_back(splitedArg);
     	}
+    	
         splitedArg.clear();
         splitedArg.push_back("echo");
         it[0] = CleanString(it[0],'#');
@@ -121,6 +123,10 @@ for(string::iterator it = input.begin(); it != input.end();++it)
     {
         arg.push_back(splitedPiece);//add this piece of text to the vector
         splitedPiece.clear();//clean the piece to do another one to fill it again
+        /*if(currentChar='#'){
+            testHashtag=true;
+            comm.push_back(*it);
+        }*/
     }
     if(testHashtag && it == input.end()-1)
     {
@@ -132,6 +138,7 @@ for(string::iterator it = input.begin(); it != input.end();++it)
         // we go into that if so we dont go into the else, so the space is not taken in the arg, so this is what I want. I'm sad to let an if empty.
     }
     else{
+    	
         if(currentChar =='#')
         {   
             testHashtag =true;
@@ -139,7 +146,7 @@ for(string::iterator it = input.begin(); it != input.end();++it)
             splitedPiece.clear();
             comm.push_back(*it);
         }
-        else if(testHashtag)
+        if(testHashtag)
         {
             comm.push_back(*it);
         }
