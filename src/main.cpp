@@ -17,9 +17,10 @@ vector<string> Split(string);
 vector <vector <string> > SplitCmd(vector<string>);
 int main(int argc, char ** argv){
 string in;
+string out;
 vector<string> arg;
 vector <vector <string> > args; //vector of commands
-while (in !="quit"){
+while (out !="exit"){
     cout<<"$ ";
     std::getline(cin,in);
     arg=Split(in);
@@ -31,25 +32,32 @@ while (in !="quit"){
         for(int k =0; k<args[j].size();k++){
             argFinal[k]=(char*)args[j][k].c_str();
         }
-        argFinal[args[j].size()]=NULL; //last arg must be null
-        int pid = fork(); // for the process to be able to do the execvp 
-        if(pid ==1){
-            perror("fork failed");//if the fork failed
-        }
-        else if(pid==0){
-    	    //child process
-            if(execvp(argFinal[0],argFinal) !=0 && in != "quit"){
-        	    perror("error in execvp");
-            }
-            else if(in =="quit")
-            {
-                exit(0);//quit the process if quit is typed
-            }
-        exit(0);
+        if(strcmp(argFinal[0],"exit") == 0)
+        {
+            out = "exit";
+            break;
         }
         else{
-            //parent process
-            wait(NULL);//wait till the child is finished
+            argFinal[args[j].size()]=NULL; //last arg must be null
+            int pid = fork(); // for the process to be able to do the execvp 
+            if(pid ==1){
+                perror("fork failed");//if the fork failed
+            }
+            else if(pid==0){
+    	    //child process
+                if(execvp(argFinal[0],argFinal) !=0){
+        	        perror("error in execvp");
+                }
+           /* else if(in =="quit")
+            {
+                exit(0);//quit the process if quit is typed
+            }*/
+            exit(0);
+            }
+            else{
+                 //parent process
+                wait(NULL);//wait till the child is finished
+            }
         }
     }
 }
@@ -73,11 +81,11 @@ for(vector<string>::iterator it = arg.begin(); it !=arg.end();++it){
     		//del last space
     	//	splitedArg[splitedArg.size()-1] = CleanString(splitedArg[splitedArg.size()-1],' ');
         splitedArg.erase(splitedArg.end());
-        for(int i=0; i< splitedArg.size();i++){
+       /** for(int i=0; i< splitedArg.size();i++){
             //splitedArg[i] = CleanString(splitedArg[i],' ');
             
             cout<<"splited arg : '"<<splitedArg[i]<<"'"<<endl;
-        }
+        }*/
         
         args.push_back(splitedArg);
     	}
