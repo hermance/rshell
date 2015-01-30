@@ -3,7 +3,6 @@
 It is the beggining of our *shell project*.
 
 1. List Of Bugs
-    *[cmd]#comment
 2. Successful tests
     *ls
     *ls -a
@@ -20,7 +19,8 @@ It is the beggining of our *shell project*.
     *ls exit
     *ls;exit
     *exit -a
-
+    *ls#comment
+    *ls;#comment;ls (prints the result of ls then "comment;ls")
 3. Features
     *When type 'exit', you exit the program
     *comments are printed 
