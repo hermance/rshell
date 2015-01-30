@@ -27,7 +27,7 @@ while (out !="exit"){
     args = SplitCmd(arg); // we have here a list of command with their args
     for(int j=0; j< args.size();j++)
     {
-        //conversion zone
+        //conviersion zone
         char * argFinal[args[j].size()];
         for(int k =0; k<args[j].size();k++){
             argFinal[k]=(char*)args[j][k].c_str();
@@ -76,29 +76,38 @@ for(vector<string>::iterator it = arg.begin(); it !=arg.end();++it){
         splitedArg.push_back(*it);
     }
     else if(it[0][0]=='#'&&!hashtag){
-    	if(splitedArg.size()>1 && !hashtag)
+    	if(splitedArg.size()>0 && !hashtag)
     	{
     		//del last space
-    	//	splitedArg[splitedArg.size()-1] = CleanString(splitedArg[splitedArg.size()-1],' ');
-        //args.push_back(splitedArg);
-        splitedArg.erase(splitedArg.end());
-       /** for(int i=0; i< splitedArg.size();i++){
-            //splitedArg[i] = CleanString(splitedArg[i],' ');
-            
-            cout<<"splited arg : '"<<splitedArg[i]<<"'"<<endl;
-        }*/
+            	if(splitedArg.size() > 1){  
+            	    splitedArg.erase(splitedArg.end());
+                }
+    	    args.push_back(splitedArg);
+            splitedArg.clear();
+        }
+        else if (splitedArg.size()==0){
+           // splitedArg.erase(splitedArg.end());
+           splitedArg.clear();
+        }
+            splitedArg.push_back("echo");
+            it[0] = CleanString(it[0],'#');
+            splitedArg.push_back(*it);
+            args.push_back(splitedArg);
+            hashtag =true;
+            splitedArg.clear();
+
         
-        args.push_back(splitedArg);
-    	}
-    	
-        splitedArg.clear();
+
+    }
+    /*else if(it[0][0] == '#' && splitedArg.size() == 0 && !hashtag){
+        splitedArg.erase(splitedArg.end());
         splitedArg.push_back("echo");
         it[0] = CleanString(it[0],'#');
         splitedArg.push_back(*it);
         args.push_back(splitedArg);
         hashtag =true;
         splitedArg.clear();
-    }
+    }*/
     else if(it[0]==" "&&splitedArg.size()>0 && !hashtag)
     {
         args.push_back(splitedArg);
@@ -123,7 +132,7 @@ for(string::iterator it = input.begin(); it != input.end();++it)
     {
         arg.push_back(splitedPiece);//add this piece of text to the vector
         splitedPiece.clear();//clean the piece to do another one to fill it again
-        /*if(currentChar='#'){
+       /* if(currentChar=='#'){
             testHashtag=true;
             comm.push_back(*it);
         }*/
@@ -142,8 +151,12 @@ for(string::iterator it = input.begin(); it != input.end();++it)
         if(currentChar =='#')
         {   
             testHashtag =true;
-            arg.push_back(splitedPiece);
-            splitedPiece.clear();
+            if(splitedPiece.size()>0)
+            {
+            	arg.push_back(splitedPiece);
+            //cout<<splitedPiece<<" the splitedPiece before #"<<endl;
+                splitedPiece.clear();
+            }
             comm.push_back(*it);
         }
         if(testHashtag)
