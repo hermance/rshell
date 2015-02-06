@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <vector>
+#include <sstream>
 using namespace std;
 /*DIR  getDirectory(){
 char cwd[1024];
@@ -125,8 +126,36 @@ else{
                     cout<<" "<<s.st_size;
                     
                     //date
-                    cout<<" "<<s.st_mtime; 
-
+                    //cout<<" "<<s.st_mtime; 
+                    int year;
+                    int hour;
+                    int min;
+                    int month;
+                    int day;
+                    string realDay;
+                    string realMonth;
+                    //char buf[200];
+                    //struct tm lt;
+                    //localtime_r(&s.st_mtime, &lt);
+                    //strftime(year, sizeof(year), "%Y", &lt);
+                    //cout<<" year "<<strdup(year);
+                    struct tm date;
+                    localtime_r(&s.st_mtime, &date);
+                    char timbuf[80];
+                    string months[] = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+                    
+                    strftime(timbuf, sizeof(timbuf), "%c", &date);
+                    month = date.tm_mon;
+                    realMonth = months[month];
+                    day = date.tm_mday;
+                    stringstream ss;
+                    ss<<day;
+                    if(day<10)realDay = ss.str() + " ";
+                    else realDay = ss.str();
+                    hour = date.tm_hour;
+                    min = date.tm_min;
+                    cout<<" "<<realMonth<<" "<<realDay<<" "<<hour<<":"<<min;
+                    
                     //name
                     cout<<" "<<vect[k];
                     cout<<endl;
