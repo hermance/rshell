@@ -23,4 +23,8 @@ It is the beggining of our *shell project*.
     *ls;#comment;ls (prints the result of ls then "comment;ls")
 3. Features
     *When type 'exit', you exit the program
-    *comments are printed 
+    *comments are printed
+2. The ls command, what is working with it
+    *ls 
+    *ls -a
+    *ls -l almost finished
