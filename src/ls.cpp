@@ -27,6 +27,7 @@ DIR *dir;
 struct dirent *dirp;
 char directory[1024];
 struct stat s;
+int cas2;
 vector<string> vect;
 char * getc = getcwd(directory, sizeof(directory));
 if(getc == NULL)
@@ -51,7 +52,8 @@ else{
                 //cout<<"cas 1"<<endl;
             }
             if(strcmp(argv[i],"-a")==0){
-                cas = 2;
+                //cas = 2;
+                cas2=2;
                 //cout<<"cas 2 "<<endl;
             }
             if(strcmp(argv[i],"-l")==0){
@@ -61,7 +63,7 @@ else{
         switch (cas){
             case 1 :
             for(int i = 0; i< vect.size(); i++){
-                if(vect[i][0] =='.'|| vect[i] ==".."){
+                if(cas2 != 2 &&(vect[i][0] =='.'|| vect[i] =="..")){
                     //do nothing
                 }
                 else
@@ -71,18 +73,19 @@ else{
                 if(i==vect.size()-1)cout<<endl;
             }
             break;
-            case 2:
+            /*case 2:
             for(int i= 0; i< vect.size();i++){
                 cout<<vect[i]<<" ";
                 if(i==vect.size()-1)cout<<endl;
             }
-            break;
+            break;*/
             case 3 :
             //thats the long case
             //struct stat s;
             for(int k= 0; k< vect.size();k++)
             {
-                if(vect[k][0] =='.'|| vect[k] ==".."){}
+            	
+                if(cas2 != 2 && (vect[k][0] =='.'|| vect[k] =="..")){}
                 else{
                     stat((const char*)vect[k].c_str(),&s);
                     cout<<((S_ISREG(s.st_mode))?"d":"-");
