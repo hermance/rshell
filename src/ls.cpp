@@ -1,4 +1,6 @@
 #include <iostream>
+#include <pwd.h>
+#include <grp.h>
 #include <cstring>
 #include <unistd.h>
 #include <stdio.h>
@@ -104,18 +106,37 @@ else{
 
                     //nb de liesn materiens
                     cout<<" "<<s.st_nlink;
+                    
+                    //user
+                    struct passwd *pw = getpwuid(s.st_uid);
+                    struct group *gr = getgrgid(s.st_gid);
+                    if(pw != 0 && gr != 0)
+                    {
+                        cout<<" "<<pw->pw_name<<" "<<gr->gr_name;
+                    }
+                    else{
+                        perror("getpwuid/getgrgid failed");
+                    }
+                    //evil number
+                    if(s.st_size<10)cout<<"    ";
+                    else if(s.st_size<100)cout<<"   ";
+                    else if(s.st_size <1000)cout<<"  ";                   
+                    else if(s.st_size <10000)cout<<" ";
+                    cout<<" "<<s.st_size;
+                    
+                    //date
+                    cout<<" "<<s.st_mtime; 
 
-                    //username
-                    char * login = getlogin();
-                    if(login ==NULL) perror("getlogin failed");
-                    cout<<" "<<login<<endl;
+                    //name
+                    cout<<" "<<vect[k];
+                    cout<<endl;
                 }
                 
 
             }
             break;
         }
-        
+    closedir(dir);   
     }
 }
 return 0;
