@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <pwd.h>
 #include <grp.h>
@@ -10,8 +11,12 @@
 #include <vector>
 #include <sstream>
 using namespace std;
+vector<string> sort(vector<string> vect){
+
+}
 void printA(vector<string> vect, int cas2)
 {
+sort(vect.begin(),vect.end());
 for(int i = 0; i< vect.size(); i++){
 	if(cas2 != 2 &&(vect[i][0] =='.'|| vect[i] =="..")){
 	 	 //do nothing
@@ -24,6 +29,8 @@ for(int i = 0; i< vect.size(); i++){
 }
 }
 void printL(vector<string> vect, int cas2){
+sort(vect.begin(),vect.end());
+
 struct stat s;
 for(int k= 0; k< vect.size();k++)
 {
