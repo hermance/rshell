@@ -1,0 +1,156 @@
+Script started on Sun 08 Feb 2015 09:51:24 PM PST
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls
+ LICENSE Makefile README.md bin src tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -l
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -l[KR
+ LICENSE Makefile README.md bin src tests
+./tests:
+ exec.script ls.script
+./src:
+ ls.cpp main.cpp main.h
+./bin:
+ ls rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -R -l
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+./tests:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 exec.script
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.script
+./src:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.h
+./bin:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -R -l[K[K[K[Kl -R
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+./tests:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 exec.script
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.script
+./src:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.h
+./bin:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -l -R[K[K[KR
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+./tests:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 exec.script
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.script
+./src:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.h
+./bin:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -lR[K[KRl
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+./tests:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 exec.script
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.script
+./src:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.cpp
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 main.h
+./bin:
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 ls
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -Rl[K[Ka
+ . .. .git LICENSE Makefile README.md bin src tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -a -l
+-rwx rwx r-x 6 hermane hermane  4096 Feb 8  18:48 .
+-rwx rwx r-x 3 hermane hermane  4096 Feb 8  18:46 ..
+-rwx rwx r-x 8 hermane hermane  4096 Feb 8  21:28 .git
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls -a -l -l -l -l -l -l -l -l -l -l -l -l -l -l - l -l - [K[K-a -a -a -a -a -a [K
+-rwx rwx r-x 6 hermane hermane  4096 Feb 8  18:48 .
+-rwx rwx r-x 3 hermane hermane  4096 Feb 8  18:46 ..
+-rwx rwx r-x 8 hermane hermane  4096 Feb 8  21:28 .git
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ ls[K[Kbin/ls -a -l -l -l -l -l -l -l -l -l -l -l -l -l -l -ll -l -a -a -a -a -a -a[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksrc
+ ls.cpp main.cpp main.h
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls src[K[K[K..
+ rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls ../..
+ Desktop Documents Downloads Music Pictures Public Templates Videos a.out aaaaaa examples.desktop fork lol rshell sizeof test.cpp
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls ../.. -a
+ . .. .ICEauthority .Xauthority .bash_history .bash_logout .bashrc .cache .compiz .config .dmrc .gconf .gitconfig .local .mozilla .profile .ssh .vboxclient-clipboard.pid .vboxclient-display.pid .vboxclient-draganddrop.pid .vboxclient-seamless.pid .viminfo .xsession-errors .xsession-errors.old Desktop Documents Downloads Music Pictures Public Templates Videos a.out aaaaaa examples.desktop fork lol rshell sizeof test.cpp
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls ../.. -a[Kl
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Desktop
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Documents
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Downloads
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Music
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Pictures
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Public
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Templates
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 Videos
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 a.out
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 aaaaaa
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 examples.desktop
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 fork
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 lol
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 rshell
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 sizeof
+---- -w- --- 140735577749984 root root 140714701720056 Apr 26 5:39 test.cpp
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ ls -a badPath
+ls: cannot access badPath: No such file or directory
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ ls -a badPath[1@b[1@i[1@n[1@/
+opendir failed: No such file or directory
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$        l[Kbin/ls[K[K[K[K[K[K[K[K[K[K[K[K[Kbin/ls                            -a
+ . .. .git LICENSE Makefile README.md bin src tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls                            -a[1@-[1@l
+-rwx rwx r-x 6 hermane hermane  4096 Feb 8  18:48 .
+-rwx rwx r-x 3 hermane hermane  4096 Feb 8  18:46 ..
+-rwx rwx r-x 8 hermane hermane  4096 Feb 8  21:28 .git
+drw- rw- r-- 1 hermane hermane   178 Feb 8  18:47 LICENSE
+drw- rw- r-- 1 hermane hermane   173 Feb 8  18:47 Makefile
+drw- rw- r-- 1 hermane hermane   729 Feb 8  18:47 README.md
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 bin
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:43 src
+-rwx rwx r-x 2 hermane hermane  4096 Feb 8  21:51 tests
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ bin/ls                 -l           -a        ..
+-rwx rwx r-x 6 hermane hermane  4096 Feb 8  18:48 .
+-rwx rwx r-x 3 hermane hermane  4096 Feb 8  18:46 ..
+-rwx rwx r-x 3 hermane hermane  4096 Feb 8  18:46 rshell
+]0;hermane@hermane-VirtualBox: ~/rshell/rshellhermane@hermane-VirtualBox:~/rshell/rshell$ exit
+Script done on Sun 08 Feb 2015 09:56:21 PM PST
