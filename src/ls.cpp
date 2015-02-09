@@ -159,7 +159,14 @@ struct dirent *dirp;
 char directory[1024];
 int cas2;
 int cas3;
+string path="";
 vector<string> vect;
+//test for path
+for(int j =1; j< argc;j++){
+if(argv[j][0]!= '-'){
+path = argv[j];
+}
+}
 char * getc = getcwd(directory, sizeof(directory));
 if(getc == NULL)
 {
@@ -167,7 +174,11 @@ if(getc == NULL)
 }
 else{
     //tout s'est bien passé
-    dir = opendir(directory);
+    if(path !=""&&path!=" "){
+	string pathR = directory + '/' + path;
+	dir = opendir(pathR.c_str());
+}	
+else dir = opendir(directory);
     if(dir == NULL)
     {
         perror("opendir failed");
@@ -177,7 +188,7 @@ else{
            vect.push_back((string)dirp->d_name);
         }
         int cas;
-        for(int i =0;i<argc;i++){
+	for(int i =0;i<argc;i++){
         	if(strcmp(argv[i],"bin/ls")==0){
                 cas=1;
                 //cout<<"cas 1"<<endl;
