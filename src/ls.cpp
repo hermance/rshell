@@ -100,23 +100,30 @@ else{
 }
 void openPrintR(vector<string> vect,int cas, int cas2, int cas3){
 //cas 2 : -a, cas3 : -l
+if(cas3 != 1)printA(vect,cas2);
+else printL(vect, cas2);
 DIR * dir;
 struct dirent * dirp;
 for(int i=0; i<vect.size(); i++){
 //parcours de la liste des attributs
 struct stat s;
+//stat(directory + vect[i],&s)
 stat((const char*)vect[i].c_str(),&s); //get file
-if(vect[i][0]!='.')cout<<" "<<vect[i]<<endl;
-
+//if(vect[i][0]!='.')cout<<" "<<vect[i];
 char directory[1024];
 char * getc = getcwd(directory, sizeof(directory));
 //if(stat((directory+vect[i]).c_str(), &s) == -1)perror("stat failed");
+//if(vect[i][0]!='.'&&!S_ISDIR(s.st_mode))cout<<" "<<vect[i];
+stat((const char*)vect[i].c_str(),&s); 
 
-if(S_ISDIR(s.st_mode)&& vect[i][0] !='.'){
+bool test;
+if(vect[i] ==0) test = false;
+else test = true;
+if(test&&S_ISDIR(s.st_mode)&& vect[i][0] !='.'){
 //if it is a rep
+cout<<"\n\n"<<vect[i]<<":"<<endl;
 //get the path
-cout<<"\tTHE SUBFOLDER --------------------"<<endl;
-//char directory[1024];
+
 vector<string> vect2;
 char * getc = getcwd(directory, sizeof(directory));
 //if(stat((directory+vect[i]).c_str(), &s) == -1)perror("stat failed");
