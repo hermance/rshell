@@ -102,26 +102,96 @@ void openPrintR(vector<string> vect,int cas, int cas2, int cas3){
 //cas 2 : -a, cas3 : -l
 if(cas3 != 1)printA(vect,cas2);
 else printL(vect, cas2);
-DIR * dir;
+struct dirent * dirp;
+vector<string> vect2;
+struct dirent *file;
+char directory[1024];
+char * getc = getcwd(directory, sizeof(directory));
+if(getc == NULL){
+        perror("getcwd failed");
+}
+else{
+//for(int i =0; i< vect.size(); i++){
+	DIR *dir = opendir(directory);
+	if(dir == NULL) perror("opendir failed");
+	else{
+		while((file = readdir(dir)) != NULL){
+			struct stat file_info;
+			if(stat(file->d_name, &file_info) == -1)perror("stat failed");
+			if(S_ISDIR(file_info.st_mode)){
+				cout<<"./"<<file->d_name<<":"<<endl;
+				//on veut ouvrir ce dossier
+				string directoryBis;
+				string test; 
+				char testC[256];
+				test = (string)file->d_name;
+				//strcpy(testC,test);
+				//cout<<"testC : "<<testC<<endl;
+				directoryBis = directory+'/' + test;
+				struct dirent *dirp2;
+			//	cout<<"nouv directory : "<<directoryBis<<endl;		
+				DIR *dir2 = opendir(directoryBis.c_str());
+				if(dir2 == NULL)perror("opendire failed");
+				else{
+					while((dirp2=readdir(dir2))!=NULL){
+						//cout<<"here is the content :"<<(string)dirp2->d_name<<endl;
+						//openPrintR(vect2,cas2,cas3);
+						vect2.push_back((string)dirp2->d_name);
+						
+						//openPrintR(vect2,cas,cas2,cas3);
+					}
+//openPrintR(vect2,cas,cas2,cas3);
+				}
+				closedir(dir2);
+				if(cas3 != 1)printA(vect2,cas2);
+				else printL(vect2, cas2);
+				vect2.clear();
+
+//it is a repository
+				//file.insert(0,"/");
+				
+				/*struct dirent* dirp2;
+    				DIR *dir2 = opendir((directory+(string)file->d_name).c_str());
+				if(dir2 == NULL)perror("opendir failed");
+				else{
+					while((dirp2 = readdir(dir2))!=NULL){
+					vect2.push_back((string)dirp2->d_name);//on rempli le nouveau truc
+        			cout<<directory+(string)dirp2->d_name<<endl;
+
+					}
+				closedir(dir2);
+				//openPrintR(vect2,cas, cas2, cas3); // appel recursif
+
+				}*/
+			}
+		}
+	}
+	closedir(dir);
+//}
+}
+/*DIR * dir;
 struct dirent * dirp;
 for(int i=0; i<vect.size(); i++){
 //parcours de la liste des attributs
 struct stat s;
 //stat(directory + vect[i],&s)
-stat((const char*)vect[i].c_str(),&s); //get file
+//stat((const char*)vect[i].c_str(),&s); //get file
 //if(vect[i][0]!='.')cout<<" "<<vect[i];
 char directory[1024];
 char * getc = getcwd(directory, sizeof(directory));
 //if(stat((directory+vect[i]).c_str(), &s) == -1)perror("stat failed");
 //if(vect[i][0]!='.'&&!S_ISDIR(s.st_mode))cout<<" "<<vect[i];
-stat((const char*)vect[i].c_str(),&s); 
 
-bool test;
-if(vect[i] ==0) test = false;
-else test = true;
-if(test&&S_ISDIR(s.st_mode)&& vect[i][0] !='.'){
+dir = opendir(directory);
+while((dirp = readdir(dir)) !=NULL){
+struct stat file_info;
+
+stat((const char*)vect[i].c_str(),&file_info); 
+if(stat(dirp->d_name, &file_info)==-1) perror("stat failed");
+else{
+if(S_ISDIR(file_info.st_mode)&& vect[i][0] !='.'){
 //if it is a rep
-cout<<"\n\n"<<vect[i]<<":"<<endl;
+cout<<"\n./"<<vect[i]<<":"<<endl;
 //get the path
 
 vector<string> vect2;
@@ -143,6 +213,7 @@ else{
     }
     else{
         while((dirp = readdir(dir))!=NULL){
+
             vect2.push_back((string)dirp->d_name);//on rempli le nouveau truc
         }
         closedir(dir);
@@ -151,20 +222,8 @@ else{
 }
 }
 }
-/*
-switch (cas){
-	case 1 :
-	printA(vect, cas2);
-	break;
-	case 3 :
-	printL(vect,cas2);
-	break;
-	case 4 : 
-	printA(vect,cas2);
-	} */
-	     //closedir(dir);
-
-
+}
+}*/
 }
 int main(int argc, char* argv[]){
 DIR *dir;
